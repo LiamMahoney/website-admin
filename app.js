@@ -37,39 +37,11 @@ app.get('/*', (req, res) => {
         // user needs to authenticate
         res.redirect(301, 'https://api.liammahoney.dev/authentication');
     } else {
-        // // need to check that token is valid
-        // let options = {
-        //     host: 'api.liammahoney.dev',
-        //     port: '443',
-        //     path: `authCheck?${req.query.token}`,
-        //     method: 'GET'
-        // }
-
-        // let apiRequest = https.request(options, (apiResponse) => {
-
-        //     apiResponse.on("end", () => {
-        //         if (apiResponse.statusCode === 200) {
-        //             // serving admin page
-        //             res.sendFile(path.join(__dirname, "/public/admin.html"));
-        //         } else {
-        //             // authentication failed.
-        //             res.redirect(301, "https://liammahoney.dev/401.html");
-        //         }
-        //     });
-        // });
-
-        // apiRequest.on("error", (err) => {
-        //     logger.error("error", { error: err });
-        //     res.status(500);
-        //     res.end("internal error");
-        // });
-
-        // apiRequest.end();
-
+        // checking token to see if it's valid
         let options = {
             host: 'api.liammahoney.dev',
             port: '443',
-            path: '/',
+            path: `/authCheck?token=${req.query.token}`,
             method: 'GET'
         }
 
@@ -81,7 +53,11 @@ app.get('/*', (req, res) => {
 
             apiResponse.on('end', () => {
                 console.log(`RESPONSE: ${data}`);
-                res.sendFile(path.join(__dirname, "/public/admin.html"));
+                if (apiResponse.statusCode === 200) {
+                    res.sendFile(path.join(__dirname, "/public/admin.html"));
+                } else {
+                    res.redirect(301, "https://liammahoney.dev/401.html");
+                }
             });
         });
 
@@ -93,8 +69,6 @@ app.get('/*', (req, res) => {
     }
 
 });
-
-
 
 app.listen(8001);
 console.log("admin listening on 8001");
