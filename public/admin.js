@@ -372,9 +372,9 @@ function getProjectInputs(className) {
             for (x of inputs) {
                 if (x.id == "technologies") {
                     // splits by comma, trims off white space, and sorts alphabetically
-					list[x.id] = x.value.split(',').map((item) => {
-						return item.trim();
-					}).sort();
+                    list[x.id] = x.value.split(',').map((item) => {
+                        return item.trim();
+                    }).sort();
                 } else {
                     list[x.id] = x.value;
                 }

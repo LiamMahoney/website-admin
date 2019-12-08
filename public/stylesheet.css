@@ -1,0 +1,219 @@
+/* Start CSS from website */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: unset;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    background-color: white;
+    z-index: 1;
+}
+
+.nav .header {
+    font-weight: 700;
+    font-size: 4rem;
+    font-style: italic;
+}
+
+.nav .header a{
+    text-decoration: none;
+    color: black;
+}
+
+.link-row {
+    display: flex;
+}
+
+.link-row .link {
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+.project-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1;
+    padding-top: 10rem;
+    padding-bottom: 2rem;
+}
+
+.error-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.error-container .header {
+    font-weight: 700;
+    font-size: 8rem;
+    font-style: italic;
+}
+
+.header {
+    font-size: 1.25rem;
+    color: rgb(0,0,0);
+}
+
+.sub-header {
+    font-size:1rem;
+    color: rgb(0, 0, 0);
+    opacity: .7;
+}
+
+.text {
+    font-size: 1rem;
+    color: rgb(0, 0, 0);
+    opacity: .7;
+}
+
+.link {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    padding-bottom: 2px;
+}
+
+.link:hover {
+    border-bottom: 2px solid rgb(0, 0, 0, .7);
+    padding-bottom: 0;
+    opacity: .7;
+}
+
+.icon-link {
+    color:#000000;
+}
+
+.icon-link:hover {
+    opacity: .7;
+    cursor: pointer;
+}
+
+.error {
+    color: #B00020;
+}
+
+
+@media only screen and (max-device-width: 812px) {
+    .nav .header {
+        font-weight: 700;
+        font-size: 8rem;
+        font-style: italic;
+    }
+
+    .link-row {
+        font-size: 2.3rem;
+    }
+
+    .project-container {
+        padding-top: 20rem;
+    }
+
+    .text {
+        font-size: 2.3rem;
+    }
+}
+
+/* End CSS from website */
+
+
+.admin-project{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    margin-bottom: 2rem;
+}
+
+.add-admin-proj {
+    width: 50%;
+    margin-top: 3rem;
+}
+
+label {
+    margin-top: .5rem;
+}
+
+button {
+    border: 1px solid black;
+    border-radius: 3px;
+    margin-top: .5rem;
+}
+
+button:hover {
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+input {
+    border: 1px solid black;
+    border-radius: 3px;
+    padding-left: 3px;
+}
+
+input:hover {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+input:focus {
+    outline: unset;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+textarea {
+    border: 1px solid black;
+    border-radius: 3px;
+    padding-left: 3px;
+}
+
+textarea:hover {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+textarea:focus {
+    outline: unset;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+#description {
+    height: 4rem;
+}
+
+.alert {
+    display: flex;
+    width: 75%;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: .25rem;
+}
+
+.alert-button:hover {
+    cursor: pointer;
+}
+
+.alert-error {
+    background-color: #B00020;
+    color: #ffffff;
+}
+
+.alert-success {
+    background-color: #66bb6a;
+}
