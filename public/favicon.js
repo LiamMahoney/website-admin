@@ -1,3 +1,0 @@
-(() => {
-    console.log("favicon.js ");
-})();
