@@ -344,7 +344,7 @@ function checkProjectInputs(className) {
             for (x of inputs) {
                 if (x.value.trim() === "") {
                     // value is empty
-                    reject();
+                    reject("All input boxes must have values");
                 }
             }
 
