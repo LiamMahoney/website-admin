@@ -253,7 +253,6 @@ function updateHandler(obj) {
 }
 
 function delHandler(obj) {
-    // TODO:
     console.log("delete handler");
     deleteProject(obj.target.parentElement.id).then((result) => {
         removeProjectFromUI(obj.target.parentElement.id);
