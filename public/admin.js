@@ -257,7 +257,7 @@ function delHandler(obj) {
     console.log("delete handler");
     deleteProject(obj.target.parentElement.id).then((result) => {
         removeProjectFromUI(obj.target.parentElement.id);
-        displaySuccess(obj.target, "Successfully deleted project");
+        displaySuccess(obj.target.parentElement.id, "Successfully deleted project");
     }).catch((err) => {
         displayError(obj.target, err);
     });
