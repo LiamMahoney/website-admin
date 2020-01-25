@@ -305,7 +305,7 @@ function addNewHandler(obj) {
     }).then((results) => {
         return sendNewProject(results);
     }).then((result) => {
-        displaySuccess(obj.target.parentElement, result.inserted);
+        displaySuccess(obj.target, result.inserted);
         console.log(result);
         addIDClass(result._id);
         swapProjectButtons(obj.target);
