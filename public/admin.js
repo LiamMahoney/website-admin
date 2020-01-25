@@ -5,7 +5,9 @@
     }).then((data) => {
         generateAdminView(data);
     }).catch((err) => {
-        //TODO: display error
+        createAlert("error", "Error (" + err + ") while generating projects").then((alert) => {
+            document.querySelector(".project-container").appendChild(alert);
+        });
         console.log(err);
     });
 })();
@@ -485,44 +487,6 @@ function displayError(obj, message) {
         // appending to top of admin project
         obj.parentElement.insertBefore(alert, obj.parentElement.children[0]);
     });
-}
-
-/**
- * Crates an alert element.
- * @param {String} type either success or error 
- * @returns {Promise} resolves the alert element
- */
-function createAlert(type, message) {
-    return new Promise((resolve, reject) => {
-        let alert = document.createElement("div");
-        alert.classList.add("alert", `alert-${type}`);
-
-        let messageContainer = document.createElement("div");
-        messageContainer.classList.add("alert-message");
-        messageContainer.innerText = message;
-
-        let buttonContainer = document.createElement("div");
-        buttonContainer.classList.add("alert-button");
-
-        let button = document.createElement("i");
-        button.classList.add("fas", "fa-times");
-        button.addEventListener("click", alertCloseHandler);
-
-        buttonContainer.appendChild(button);
-
-        alert.appendChild(messageContainer);
-        alert.appendChild(buttonContainer);
-
-        resolve(alert);
-    });
-}
-
-/**
- * Removes the alert from the screen.
- * @param {Event} obj event from the x button being clicked 
- */
-function alertCloseHandler(obj) {
-    obj.target.parentElement.parentElement.parentElement.removeChild(obj.target.parentElement.parentElement);
 }
 
 /**

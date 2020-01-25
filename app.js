@@ -32,6 +32,18 @@ app.get('/admin.js', (req, res) => {
     res.sendFile(path.join(__dirname, "/public/admin.js"));
 });
 
+app.get('/alerts.js', (req, res) => {
+    res.sendFile(path.join(__dirname, "/public/alerts.js"));
+});
+
+app.get('/alerts.css', (req, res) => {
+    res.sendFile(path.join(__dirname, "/public/alerts.css"));
+});
+
+app.get('/close.png', (req, res) => {
+    res.sendFile(path.join(__dirname, "/public/close.png"));
+});
+
 app.get('/*', (req, res) => {
     if (!req.query.token) {
         // user needs to authenticate

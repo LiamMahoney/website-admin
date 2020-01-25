@@ -195,25 +195,3 @@ textarea:focus {
 #description {
     height: 4rem;
 }
-
-.alert {
-    display: flex;
-    width: 75%;
-    justify-content: space-between;
-    border: 1px solid black;
-    border-radius: 3px;
-    padding: .25rem;
-}
-
-.alert-button:hover {
-    cursor: pointer;
-}
-
-.alert-error {
-    background-color: #B00020;
-    color: #ffffff;
-}
-
-.alert-success {
-    background-color: #66bb6a;
-}

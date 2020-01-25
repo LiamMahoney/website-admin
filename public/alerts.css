@@ -1,0 +1,46 @@
+.alert {
+    display: flex;
+    width: 400px;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: .25rem;
+}
+
+.alert-button {
+    display: flex;
+    align-items: center;
+}
+
+.alert-button:hover {
+    cursor: pointer;
+}
+
+.alert-message {
+    flex: 1;
+    text-align: center;
+}
+
+.alert-error {
+    background-color: #B00020;
+    color: #ffffff;
+}
+
+.alert-success {
+    background-color: #66bb6a;
+}
+
+.close-button {
+    height: 1.25rem;
+    width: auto;
+}
+
+@media only screen and (max-device-width: 812px) {
+    .alert {
+        width: 90%;
+    }
+
+    .close-button {
+        height: 3rem;
+    }
+}
