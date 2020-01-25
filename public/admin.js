@@ -260,6 +260,7 @@ function updateHandler(obj) {
  */
 function delHandler(obj) {
     console.log("delete handler");
+    let test = "hello world";
     deleteProject(obj.target.parentElement.id).then((result) => {
         var insertAlertBefore = undefined;
         // getting the location I should put the alert within project-container div
