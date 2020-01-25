@@ -268,8 +268,9 @@ function delHandler(obj) {
             if (obj.target.parentElement.parentElement.children[x] == obj.target.parentElement) {
                 /* This is the object that the alert needs to be inserted before. Won't run into an 
                 issue of index out of bounds becuase the 'add new project' button will always be 
-                below all of the projects on the page.*/
-                insertAlertBefore = obj.target.parentElement.parentElement.children[x + 1];
+                below all of the projects on the page. For some reason the indexes of an HTMLCollection
+                are strings, so need to make it an int before adding 1 to it. */
+                insertAlertBefore = obj.target.parentElement.parentElement.children[parseInt(x) + 1];
             }
         }
         removeProjectFromUI(obj.target.parentElement.id);
