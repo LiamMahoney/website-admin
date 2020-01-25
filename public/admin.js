@@ -261,7 +261,21 @@ function updateHandler(obj) {
 function delHandler(obj) {
     console.log("delete handler");
     deleteProject(obj.target.parentElement.id).then((result) => {
+        let insertAlertBefore = undefined;
+        // getting the location I should put the alert within project-container div
+        for (x in obj.target.parentElement.parentElement.children) {
+            // finding the index of the project getting deleted
+            if (obj.target.parentElement.parentElement.children[x] == obj.target.parentElement) {
+                /* This is the object that the alert needs to be inserted before. Won't run into an 
+                issue of index out of bounds becuase the 'add new project' button will always be 
+                below all of the projects on the page.*/
+                insertAlertBefore = obj.target.parentElement.parentElement.children[x + 1];
+            }
+        }
         removeProjectFromUI(obj.target.parentElement.id);
+        return createAlert("success", result)
+    }).then((alert) => {
+        document.querySelector(".project-container").insertBefore(alert, insertAlertBefore);
     }).catch((err) => {
         displayError(obj.target, err);
     });
