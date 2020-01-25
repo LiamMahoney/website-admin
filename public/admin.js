@@ -253,11 +253,15 @@ function updateHandler(obj) {
     });
 }
 
+/**
+ * Handler function for when the delete project button is clicked.
+ * TODO: figure out how to properly display alert here.
+ * @param {Event} obj the event object from the delete butotn being clicked
+ */
 function delHandler(obj) {
     console.log("delete handler");
     deleteProject(obj.target.parentElement.id).then((result) => {
         removeProjectFromUI(obj.target.parentElement.id);
-        displaySuccess(obj.target.parentElement.id, "Successfully deleted project");
     }).catch((err) => {
         displayError(obj.target, err);
     });
