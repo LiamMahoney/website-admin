@@ -257,6 +257,7 @@ function delHandler(obj) {
     console.log("delete handler");
     deleteProject(obj.target.parentElement.id).then((result) => {
         removeProjectFromUI(obj.target.parentElement.id);
+        displaySuccess(obj.target, "Successfully deleted project");
     }).catch((err) => {
         displayError(obj.target, err);
     });
@@ -458,6 +459,7 @@ function sendNewProject(data) {
 
 /**
  * @param {HTMLElement} target: the button to change to a spinner
+ * TODO: redo, don't want to use font-awesome
  */
 function buttonSpinner(target) {
     target.innerHTML = `<i class="fas fa-circle-notch fa-spin"></i>`;
