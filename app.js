@@ -40,8 +40,8 @@ app.get('/alerts.css', (req, res) => {
     res.sendFile(path.join(__dirname, "/public/alerts.css"));
 });
 
-app.get('/close.png', (req, res) => {
-    res.sendFile(path.join(__dirname, "/public/close.png"));
+app.get('/pics/close.png', (req, res) => {
+    res.sendFile(path.join(__dirname, "/public/pics/close.png"));
 });
 
 app.get('/*', (req, res) => {
