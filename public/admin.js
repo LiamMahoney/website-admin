@@ -1,8 +1,7 @@
 (() => {
     // requesting projects from MongoDB 
     fetch("https://api.liammahoney.dev/projects").then((response) => {
-        if (response.ok) return response.json();
-        else console.log(`${response.status} - ${response.statusText}`);//TODO: display error.
+        return response.json();
     }).then((data) => {
         generateAdminView(data);
     }).catch((err) => {
