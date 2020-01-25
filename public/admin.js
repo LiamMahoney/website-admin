@@ -260,21 +260,20 @@ function updateHandler(obj) {
  */
 function delHandler(obj) {
     console.log("delete handler");
-    let test = "hello world";
-    deleteProject(obj.target.parentElement.id).then((result) => {
-        var insertAlertBefore = undefined;
-        // getting the location I should put the alert within project-container div
-        for (x in obj.target.parentElement.parentElement.children) {
-            // finding the index of the project getting deleted
-            if (obj.target.parentElement.parentElement.children[x] == obj.target.parentElement) {
-                /* This is the object that the alert needs to be inserted before. Won't run into an 
-                issue of index out of bounds becuase the 'add new project' button will always be 
-                below all of the projects on the page. For some reason the indexes of an HTMLCollection
-                are strings, so need to make it an int before adding 1 to it. */
-                insertAlertBefore = obj.target.parentElement.parentElement.children[parseInt(x) + 1];
-                break;
-            }
+    var insertAlertBefore = undefined;
+    // getting the location I should put the alert within project-container div
+    for (x in obj.target.parentElement.parentElement.children) {
+        // finding the index of the project getting deleted
+        if (obj.target.parentElement.parentElement.children[x] == obj.target.parentElement) {
+            /* This is the object that the alert needs to be inserted before. Won't run into an 
+            issue of index out of bounds becuase the 'add new project' button will always be 
+            below all of the projects on the page. For some reason the indexes of an HTMLCollection
+            are strings, so need to make it an int before adding 1 to it. */
+            insertAlertBefore = obj.target.parentElement.parentElement.children[parseInt(x) + 1];
+            break;
         }
+    }
+    deleteProject(obj.target.parentElement.id).then((result) => {
         removeProjectFromUI(obj.target.parentElement.id);
         return createAlert("success", result)
     }).then((alert) => {
