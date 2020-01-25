@@ -305,7 +305,9 @@ function addNewHandler(obj) {
     }).then((results) => {
         return sendNewProject(results);
     }).then((result) => {
-        displaySuccess(obj.target, result.inserted);
+        // have to use a different object than the 'insert' button becuase it 
+        // gets deleted before the alert is created
+        displaySuccess(obj.target.parentElement.children[0], result.inserted);
         console.log(result);
         addIDClass(result._id);
         swapProjectButtons(obj.target);
