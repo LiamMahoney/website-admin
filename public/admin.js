@@ -243,7 +243,7 @@ function updateHandler(obj) {
     }).then((results) => {
         return sendUpdatedProject(results);
     }).then((result) => {
-        displaySuccess(obj.target.parentElement.id, result);
+        displaySuccess(obj.target, result);
         console.log(result);
     }).catch((err) => {
         displayError(obj.target, err);
