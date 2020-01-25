@@ -255,11 +255,9 @@ function updateHandler(obj) {
 
 /**
  * Handler function for when the delete project button is clicked.
- * TODO: figure out how to properly display alert here.
  * @param {Event} obj the event object from the delete butotn being clicked
  */
 function delHandler(obj) {
-    console.log("delete handler");
     var insertAlertBefore = undefined;
     // getting the location I should put the alert within project-container div
     for (x in obj.target.parentElement.parentElement.children) {
