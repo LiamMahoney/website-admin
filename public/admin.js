@@ -243,7 +243,7 @@ function updateHandler(obj) {
     }).then((results) => {
         return sendUpdatedProject(results);
     }).then((result) => {
-        displaySuccess(obj.target, result);
+        displaySuccess(obj.target.parentElement.id, result);
         console.log(result);
     }).catch((err) => {
         displayError(obj.target, err);
@@ -301,7 +301,7 @@ function addNewHandler(obj) {
     }).then((results) => {
         return sendNewProject(results);
     }).then((result) => {
-        displaySuccess(obj.target, result.inserted);
+        displaySuccess(obj.target.parentElement.id, result.inserted);
         console.log(result);
         addIDClass(result._id);
         swapProjectButtons(obj.target);
