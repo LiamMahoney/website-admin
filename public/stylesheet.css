@@ -196,7 +196,7 @@ textarea:focus {
     height: 4rem;
 }
 
-#loading-spinner {
+.loading-spinner {
     animation: rotation 2s infinite linear;
 }
 
