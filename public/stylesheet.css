@@ -198,6 +198,8 @@ textarea:focus {
 
 #loading-spinner {
     animation: rotation 2s infinite linear;
+    height: 1rem;
+    width: auto;
 }
 
 @keyframes rotation {
