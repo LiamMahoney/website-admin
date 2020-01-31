@@ -258,6 +258,7 @@ function updateHandler(obj) {
  * @param {Event} obj the event object from the delete butotn being clicked
  */
 function delHandler(obj) {
+    buttonSpinner(obj.target);
     var insertAlertBefore = undefined;
     // getting the location I should put the alert within project-container div
     for (x in obj.target.parentElement.parentElement.children) {
