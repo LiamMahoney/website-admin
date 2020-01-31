@@ -338,11 +338,7 @@ function addNewHandler(obj) {
  * @param {Event} obj event object from pressing button 
  */
 function removeNewHandler(obj) {
-    obj.target.parentElement.classList.add("fade-out");
-    // obj.target is the button that was clicked 
-    setTimeout(() => {
-        obj.target.parentElement.parentElement.removeChild(obj.target.parentElement)
-    }, 1500);
+    obj.target.parentElement.parentElement.removeChild(obj.target.parentElement)
 }
 
 /**
