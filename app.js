@@ -15,7 +15,7 @@ const logger = winston.createLogger({
 const app = express();
 
 app.use((req, res, next) => {
-    if (req.headers.origin && req.headers.origin.endsWith("liammahoney.dev")){
+    if (req.headers.origin && req.headers.origin.endsWith("liammahoney.dev")) {
         res.header("Access-Control-Allow-Origin", req.headers.origin);
     }
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
@@ -44,6 +44,10 @@ app.get('/alerts.css', (req, res) => {
 
 app.get('/pics/close.png', (req, res) => {
     res.sendFile(path.join(__dirname, "/public/pics/close.png"));
+});
+
+app.get('/pics/loading.png', (req, res) => {
+    res.sendFile(path.join(__dirname, "/public/pics/loading.png"));
 });
 
 app.get('/*', (req, res) => {
