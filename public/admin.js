@@ -340,7 +340,6 @@ function addNewHandler(obj) {
 function removeNewHandler(obj) {
     obj.target.parentElement.classList.add("fade-out");
     // obj.target is the button that was clicked 
-    //TODO: work on better animation
     setTimeout(() => {
         obj.target.parentElement.parentElement.removeChild(obj.target.parentElement)
     }, 1500);
@@ -482,7 +481,7 @@ function sendNewProject(data) {
  * TODO: redo, don't want to use font-awesome
  */
 function buttonSpinner(target) {
-    target.innerHTML = `<i class="fas fa-circle-notch fa-spin"></i>`;
+    target.innerHTML = `<div id="loading-spinner"><img src="pics/loading.png"></div>`;
 }
 
 /**
@@ -592,7 +591,6 @@ function deleteProject(id) {
  * @param {String} id mongo collection ID 
  */
 function removeProjectFromUI(id) {
-    //TODO: add animation 
     document.getElementById(id).parentElement.removeChild(document.getElementById(id));
 }
 
