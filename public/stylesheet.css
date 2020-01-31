@@ -200,7 +200,7 @@ textarea:focus {
     animation: rotation 2s infinite linear;
 }
 
-#loading-spinner img {
+.loading-spinner img {
     height: .9rem;
     width: auto;
 }

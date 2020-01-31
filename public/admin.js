@@ -478,7 +478,7 @@ function sendNewProject(data) {
  * TODO: redo, don't want to use font-awesome
  */
 function buttonSpinner(target) {
-    target.innerHTML = `<div id="loading-spinner"><img src="pics/loading.png"></div>`;
+    target.innerHTML = `<div class="loading-spinner"><img src="pics/loading.png"></div>`;
 }
 
 /**
