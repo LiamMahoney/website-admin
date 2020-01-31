@@ -475,7 +475,6 @@ function sendNewProject(data) {
 
 /**
  * @param {HTMLElement} target: the button to change to a spinner
- * TODO: redo, don't want to use font-awesome
  */
 function buttonSpinner(target) {
     target.innerHTML = `<img class="loading-spinner" src="pics/loading.png">`;
