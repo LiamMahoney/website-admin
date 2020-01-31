@@ -202,6 +202,11 @@ textarea:focus {
     width: auto;
 }
 
+#loading-spinner img {
+    height: 90%;
+    width: auto;
+}
+
 @keyframes rotation {
     from {
         transform: rotate(0deg);
